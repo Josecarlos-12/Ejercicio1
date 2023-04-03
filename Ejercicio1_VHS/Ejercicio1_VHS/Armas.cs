@@ -8,13 +8,26 @@ namespace Ejercicio1_VHS
 {
     class Armas
     {
-        string name;
-        float damage;
-        float attackSpeed;
+        public String Nombre;
+        public int Daño;
+        public int VelocidadDeAtaque;
+        public int Precio;
 
-        public void DamagePerSecond()
+        public Armas(string nombre, int daño, int velocidadDeAtaque, int precio)
         {
-            float damageForSecond = (damage / 2) * attackSpeed; 
+            Nombre = nombre;
+            Daño = daño;
+            VelocidadDeAtaque = velocidadDeAtaque;
+            Precio = precio;
         }
+
+        public virtual float DañoPorSegundo()
+        {
+            return Daño * VelocidadDeAtaque;
+        }
+      
+        
     }
+
 }
+
